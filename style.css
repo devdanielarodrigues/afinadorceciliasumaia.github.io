@@ -1,0 +1,192 @@
+:root {
+    --tuner-size: 300px;
+    --color-bg: #111;
+    --color-text: #fff;
+    --infinity: 99999px;
+  }
+  
+  canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid red;
+  }
+  
+  * {
+    font-family: sans-serif;
+  }
+  
+  .tuner {
+  /*   opacity: 0.2; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--tuner-size);
+    height: var(--tuner-size);
+    background: var(--color-bg);
+    color: var(--color-text);
+    transform: translate(-50%, -50%);
+  }
+  
+  .tuner__panel {
+    stroke-dashoffset: 1px;
+  }
+  
+  .tuner__panel--base {
+    stroke-dasharray:
+      2px 8px 2px 8px 2px 8px 2px 8px
+      2px 8px 2px 8px 2px 8px 2px 8px
+      2px 8px 2px 8px 2px 8px 2px 8px
+      2px 8px 2px 8px 2px 8px 2px 8px
+      2px 8px 2px 8px 2px 8px 2px var(--infinity);
+  }
+  
+  .tuner__panel--highlight {
+    stroke-dasharray: 2px 48px
+      2px 48px
+      2px 48px
+      2px 48px
+      2px var(--infinity);
+  }
+  
+  .tuner__panel--right {
+    transform-origin: 150px 150px;
+    transform: rotate(-90deg);
+  }
+  
+  .tuner__panel--left {
+    transform-origin: 150px 150px;
+    transform: scaleX(-1) rotate(-90deg);
+  }
+  
+  .tuner__pointer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 140px;
+    transform-origin: 0 0;
+    transition: transform .3s ease;
+    transform: rotate(0deg) translate(-50%, -50%);
+  }
+  
+  .tuner__pointer::before {
+    display: block;
+    content: '';
+    width: 2px;
+    height: 0;
+    border-style: solid;
+    border-width: 0 4px 70px 4px;
+    border-color: transparent transparent white transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .tuner__pointer::after {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 140px;
+    height: 140px;
+    top: 50%;
+    left: 50%;
+    background: radial-gradient(
+      circle at center, var(--color-bg) 0, transparent 100%
+    );
+    transform: translate(-50%, -50%);
+  }
+  
+  .tuner__data-wrapper {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .tuner__data {
+    position: relative;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .tuner__note {
+    font-size: 2.5em;
+    font-weight: 300;
+  }
+  
+  .tuner__freq {
+    font-size: 1em;
+    font-weight: 100;
+  }
+  
+  .tuner__panel-labels {
+    font-size: 0.8em;
+    font-weight: 100;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .tuner__panel-labels-0 {
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+  }
+  
+  .tuner__panel-labels-20 {
+    position: absolute;
+    left: 50%;
+    top: 80px;
+    transform: translateX(-50%);
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .tuner__panel-labels-40 {
+    position: absolute;
+    left: 50%;
+    top: 190px;
+    transform: translateX(-50%);
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .tuner__panel-record {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  
+  .tuner__panel-record button {
+    border: 0;
+    background: #00ffbe;
+    border-radius: 2px;
+    font-size: 1em;
+    padding: 0.2em 0.8em;
+    margin-bottom: 30px;
+  }
+  

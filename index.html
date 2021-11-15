@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Afinador Cecilia Sumaia</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+
+
+</head>
+<body style="background-color:#111">
+    <!-- <canvas id="canvas" width="1024" height="256"></canvas> -->
+    <div style="text-align: center;">
+    <h1 style="color: rgb(80, 247, 163);font-synthesis: style;">Afinador<br> Cecilia Sumaia</h2>
+        <h6 style="color: aliceblue;text-align: center;">Ative o microfone do seu navegador</h6>
+    </div>
+    
+<div class="tuner">
+    <svg width="300" height="300">
+       <circle
+        class="tuner__panel tuner__panel--base  tuner__panel--left"
+        cx="150"
+        cy="150"
+        r="100"
+        stroke="#666"
+        stroke-width="12"
+        fill="none"
+      />
+      <circle
+        class="tuner__panel tuner__panel--highlight  tuner__panel--left"
+        cx="150"
+        cy="150"
+        r="100"
+        stroke="#fff"
+        stroke-width="12"
+        fill="none"
+      />
+      <circle
+        class="tuner__panel tuner__panel--base  tuner__panel--right"
+        cx="150"
+        cy="150"
+        r="100"
+        stroke="#666"
+        stroke-width="12"
+        fill="none"
+      />
+      <circle
+        class="tuner__panel tuner__panel--highlight  tuner__panel--right"
+        cx="150"
+        cy="150"
+        r="100"
+        stroke="#fff"
+        stroke-width="12"
+        fill="none"
+      />
+    </svg>
+    <div
+      id="pointer"
+      class="tuner__pointer"
+    ></div>
+    <div class="tuner__data-wrapper">
+      <div class="tuner__data">
+        <div id="note" class="tuner__note">
+          E
+        </div>
+        <div id="freq" class="tuner__freq">
+          164 Hz
+        </div>
+      </div>
+    </div>
+    <div class="tuner__panel-labels">
+      <div class="tuner__panel-labels-0">
+        <span>0</span>
+      </div>
+      <div class="tuner__panel-labels-20">
+        <span>-20</span>
+        <span>+20</span>
+      </div>
+      <div class="tuner__panel-labels-40">
+        <span>-40</span>
+        <span>+40</span>
+      </div>
+    </div>
+    <div class="tuner__panel-record">
+      <button id=record>Iniciar</button>
+    </div>
+  </div>
+  <script  src="./script.js"></script>
+</body>
+</html>
